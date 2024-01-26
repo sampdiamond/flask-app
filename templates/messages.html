@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+<!-- Page Title -->
+{% block title %}Messages{% endblock %}
+
+<!-- Page content -->
+{% block content %}
+<div class="container">
+  <h1>Messages</h1>
+  {% if data %}
+  <!-- Loop through each message -->
+  {% for message in data %}
+  <div class="d-flex flex-row align-items-center">
+    <!-- Message title -->
+    <h2 class="m-0 fs-4">{{message[1]}}</h2>
+    <!-- Message time -->
+    <span class="ms-2 text-secondary">{{message[3][11:16]}}</span>
+    <!-- Delete button -->
+    <a class="btn btn-danger btn-sm ms-2" href="/messages/remove/{{message[0]}}"
+      >Delete</a
+    >
+  </div>
+  <!-- Message content -->
+  <p>{{message[2]}}</p>
+  {% endfor %}
+  <hr />
+  {% else %}
+  <h2>There's no messages ☹</h2>
+  {% endif %}
+  <!-- Input box -->
+  <form action="/messages/add" method="post">
+    <!-- Title -->
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        name="title"
+        placeholder=""
+        required
+      />
+      <label for="title">Title</label>
+    </div>
+    <!-- Message -->
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="message"
+        name="message"
+        placeholder=""
+        required
+      />
+      <label for="title">Message</label>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Submit</button>
+  </form>
+</div>
+{% endblock %}

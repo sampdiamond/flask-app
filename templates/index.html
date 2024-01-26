@@ -1,0 +1,160 @@
+<!-- Load our base template -->
+{% extends "base.html" %}
+
+<!-- Setting the page title -->
+{% block title %}Home{% endblock %} Page content {% block content %}
+<!-- Header element -->
+<header
+  style="
+    min-height: 50vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+      url('static/background.jpg');
+    background-size: cover;
+    background-position: center center;
+  "
+  class="d-flex align-items-center text-white text-center"
+>
+  <!-- Setting a consistent margin across the page -->
+  <div class="container">
+    <!-- Using Bootstrap's grid system to set a max width of half the size on a desktop view -->
+    <div class="row">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-6 my-4">
+        <!-- Header content -->
+        <h1 class="display-3 fw-medium">Home page</h1>
+        <p class="lead fw-normal">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+          cursus scelerisque porttitor. Nullam sit amet velit tortor. Sed vel
+          eros sit amet lacus eleifend dictum eget sit amet purus. In nec varius
+          lacus. Donec ultricies facilisis finibus. Sed vel leo et ante feugiat
+          ullamcorper. Morbi scelerisque gravida consectetur.
+        </p>
+        <!-- Two buttons which are going to be aligned -->
+        <div class="d-flex align-content-stretch gap-4">
+          <a href="/about" class="btn btn-primary btn-lg w-100">About Us</a>
+          <a href="/messages" class="btn btn-secondary btn-lg w-100"
+            >Leave a message</a
+          >
+        </div>
+      </div>
+      <div class="col-lg-3"></div>
+    </div>
+  </div>
+</header>
+<!-- A second section -->
+<section>
+  <!-- Consistent margins across page -->
+  <div class="container mt-4">
+    <h2 class="text-center my-4">What we offer</h2>
+    <!-- Creating a grid using bootstrap's grid system -->
+    <div class="row">
+      <!-- Bootstrap grid systems are divided into 12 sections.
+    To make a row with 3 items on each, 4 sections will need to be used
+    We can define this by using the col-4 class. adding `md` into the
+    middle means that this grid system will only come into place
+    at medium screen sizes and above.  -->
+      <div class="col-md-4 mb-4">
+        <!-- Bootstrap card class -->
+        <div class="card">
+          <!-- Use the card-img-top class to define a card's image
+        Custom CSS can be used to set a height of the card-->
+          <img
+            src="/static/card-img-1.jpg"
+            alt="A painting of a river with a bridge in the distance"
+            class="card-img-top"
+            style="height: 200px; object-fit: cover"
+          />
+          <!-- Everything else should be placed inside of a card-body -->
+          <div class="card-body">
+            <h3 class="card-title">Title 1</h3>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              cursus scelerisque port
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img
+            src="/static/card-img-2.jpg"
+            alt="A view of a desert with sand dunes"
+            class="card-img-top"
+            style="height: 200px; object-fit: cover"
+          />
+          <div class="card-body">
+            <h3 class="card-title">Title 2</h3>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              cursus scelerisque port
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img
+            src="/static/card-img-3.jpg"
+            alt="A city street at night with a lit up building"
+            class="card-img-top"
+            style="height: 200px; object-fit: cover"
+          />
+          <div class="card-body">
+            <h3 class="card-title">Title 3</h3>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              cursus scelerisque port
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- A third section
+The bg-light class can be used to subtly change the background colour -->
+<section class="bg-light">
+  <div class="container">
+    <!-- Another grid system. This time it is split into two sections -->
+    <div class="row">
+      <div class="col-md-6 my-4">
+        <img
+          src="/static/img-split.jpg"
+          alt="A person swimming in the ocean with a mask on"
+          style="max-width: 100%; height: 100%; object-fit: cover"
+          class="rounded"
+        />
+      </div>
+      <!-- Center the cotent with the height of image -->
+      <div
+        class="col-md-6 my-4 d-flex flex-column justify-content-center align-content-center"
+      >
+        <h2>Why choose us?</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+          cursus scelerisque porttitor. Nullam sit amet velit tortor. Sed vel
+          eros sit amet lacus eleifend dictum eget sit amet purus. In nec varius
+          lacus. Donec ultricies facilisis finibus. Sed vel leo et ante feugiat
+          ullamcorper. Morbi scelerisque gravida consectetur.
+        </p>
+        <!-- Create an ordered list to easily make some points -->
+        <ol>
+          <!-- Each point is labelled with an li tag -->
+          <li>
+            Point 1 lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </li>
+          <li>
+            Point 2 lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </li>
+          <li>
+            Point 3 lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </li>
+        </ol>
+        <!-- Button to go to the about page -->
+        <a href="/about" class="btn btn-primary w-100">Learn more</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
